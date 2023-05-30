@@ -46,9 +46,11 @@ public class CityServiceImpl {
         City c= new City(id, city.getName(), city.getCountry(),city.getPopulation(),city.getArea());
         repository.save(c);
         CityResponseDTO cityResponseDTO = new CityResponseDTO();
-
         return  cityResponseDTO;
     }
 
 
+    public void removeCity(long id) {
+        repository.deleteById(id);
+    }
 }

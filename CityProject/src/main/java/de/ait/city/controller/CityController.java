@@ -17,14 +17,26 @@ public class CityController {
     private CityServiceImpl service;
 
     @GetMapping("")
-    public List<CityResponseDTO> listCity (){
+    public List<CityResponseDTO> listCity() {
         return service.getAllCities();
     }
 
     @PostMapping("")
-    @ResponseStatus(code= HttpStatus.CREATED)
-    public CityResponseDTO createCity(@RequestBody CityRequestDTO city){
+    @ResponseStatus(code = HttpStatus.CREATED)
+    public CityResponseDTO createCity(@RequestBody CityRequestDTO city) {
         return service.addCity(city);
+    }
+
+    @PostMapping("{id}")
+    @ResponseStatus(code = HttpStatus.CREATED)
+    public CityResponseDTO updateCity(@RequestParam("id") long id , @RequestBody CityRequestDTO city) {
+        return service.updateCity(id,city);
+    }
+
+    @DeleteMapping ("{id}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    public void removeCity(@RequestParam("id") long id) {
+        service.removeCity(id);
     }
 
 }

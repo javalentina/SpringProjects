@@ -33,6 +33,7 @@ public class CityController {
         return service.updateCity(id,city);
     }
 
+    /*Delete*/
     @DeleteMapping ("{id}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void removeCity(@RequestParam("id") long id) {

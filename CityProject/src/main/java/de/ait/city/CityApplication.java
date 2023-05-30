@@ -1,13 +1,13 @@
-package com.ait.cityproject;
+package de.ait.city;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CityProjectApplication {
+public class CityApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CityProjectApplication.class, args);
+        SpringApplication.run(CityApplication.class, args);
     }
 
 }

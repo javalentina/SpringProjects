@@ -1,4 +1,4 @@
-package com.ait.cityproject;
+package de.ait.city;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

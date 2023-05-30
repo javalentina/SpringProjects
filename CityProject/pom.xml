@@ -8,18 +8,18 @@
         <version>3.1.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.ait</groupId>
-    <artifactId>CityProject</artifactId>
+    <groupId>de.ait</groupId>
+    <artifactId>city</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>CityProject</name>
-    <description>CityProject</description>
+    <name>city</name>
+    <description>city</description>
     <properties>
         <java.version>17</java.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jdbc</artifactId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -31,11 +31,6 @@
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>mssql-jdbc</artifactId>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>com.mysql</groupId>
@@ -52,6 +47,21 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.modelmapper/modelmapper -->
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>3.1.1</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

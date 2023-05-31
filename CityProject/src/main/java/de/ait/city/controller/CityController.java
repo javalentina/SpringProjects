@@ -29,12 +29,12 @@ public class CityController {
 
     @PostMapping("{id}")
     @ResponseStatus(code = HttpStatus.CREATED)
-    public CityResponseDTO updateCity(@RequestParam("id") long id , @RequestBody CityRequestDTO city) {
-        return service.updateCity(id,city);
+    public CityResponseDTO updateCity(@RequestParam("id") long id, @RequestBody CityRequestDTO city) {
+        return service.updateCity(id, city);
     }
 
     /*Delete*/
-    @DeleteMapping ("{id}")
+    @DeleteMapping("{id}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void removeCity(@RequestParam("id") long id) {
         service.removeCity(id);

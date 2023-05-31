@@ -15,18 +15,18 @@ import java.util.List;
 public class CityServiceImpl {
     private CityRepository repository;
 
-    public List<CityResponseDTO> getAllCities(){
+    public List<CityResponseDTO> getAllCities() {
         List<CityResponseDTO> list = new ArrayList<>();
 
         repository.findAll().forEach(
-                c->{
+                c -> {
                     CityResponseDTO cdto = new CityResponseDTO(
                             c.getId(),
                             c.getName(),
                             c.getCountry(),
                             c.getPopulation(),
                             c.getArea()
-                            );
+                    );
 
                     list.add(cdto);
                 }
@@ -34,19 +34,19 @@ public class CityServiceImpl {
         return list;
     }
 
-    public CityResponseDTO addCity(CityRequestDTO city){
-        City c= new City(null, city.getName(), city.getCountry(),city.getPopulation(),city.getArea());
+    public CityResponseDTO addCity(CityRequestDTO city) {
+        City c = new City(null, city.getName(), city.getCountry(), city.getPopulation(), city.getArea());
         repository.save(c);
         CityResponseDTO cityResponseDTO = new CityResponseDTO();
 
-        return  cityResponseDTO;
+        return cityResponseDTO;
     }
 
-    public CityResponseDTO updateCity(Long id, CityRequestDTO city){
-        City c= new City(id, city.getName(), city.getCountry(),city.getPopulation(),city.getArea());
+    public CityResponseDTO updateCity(Long id, CityRequestDTO city) {
+        City c = new City(id, city.getName(), city.getCountry(), city.getPopulation(), city.getArea());
         repository.save(c);
         CityResponseDTO cityResponseDTO = new CityResponseDTO();
-        return  cityResponseDTO;
+        return cityResponseDTO;
     }
 
 
